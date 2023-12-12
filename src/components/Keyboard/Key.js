@@ -4,7 +4,7 @@ import { useContext } from 'react'
 
 const Key = (props) => {
 
-    const {guessTheWord , backspace , pressEnter} = useContext(SpordleContext)
+    const {guessTheWord , backspace , pressEnter, word, guessWord} = useContext(SpordleContext)
 
 
     function handleClickForBig(){
@@ -15,6 +15,8 @@ const Key = (props) => {
             backspace()
         }
     }
+    const isGuessed = guessWord.includes(props.letter);
+  const isCorrect = word.includes(props.letter);
 
     if(props.big) {
 
@@ -29,7 +31,7 @@ return (
         display: 'grid',
         placeItems: 'center',
         fontSize: 15,
-        backgroundColor: 'gray',
+        backgroundColor: props.blackedOut ? 'black' : 'gray',
         color: 'blue',
         fontFamily: 'Arial',
         cursor: 'pointer',

@@ -1,8 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Row from './Row'
-
+import { SpordleContext } from '../../App'
 
 const Grid = () => {
+  const {
+    guessTheWord,
+    pressEnter,
+    completedRows,
+    currentRow,
+    word,
+    guessWord,
+    backspace
+  } = useContext(SpordleContext);
     const rows = [1,2,3,4,5,6]
   return (
     <div className='m-4'>
