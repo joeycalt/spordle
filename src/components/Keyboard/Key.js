@@ -15,8 +15,6 @@ const Key = (props) => {
             backspace()
         }
     }
-    const isGuessed = guessWord.includes(props.letter);
-  const isCorrect = word.includes(props.letter);
 
     if(props.big) {
 
@@ -31,7 +29,7 @@ return (
         display: 'grid',
         placeItems: 'center',
         fontSize: 15,
-        backgroundColor: props.blackedOut ? 'black' : 'gray',
+        backgroundColor: 'gray',
         color: 'blue',
         fontFamily: 'Arial',
         cursor: 'pointer',
@@ -57,7 +55,8 @@ return (
             cursor: 'pointer',
             border: 0,
             fontWeight: 'bold'
-        }}>{props.letter}</button>
+        }}>
+            {props.letter}</button>
       )
 
 

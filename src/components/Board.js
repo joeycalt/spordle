@@ -4,6 +4,7 @@ import Keyboard from './Keyboard/Keyboard'
 import { SpordleContext } from '../App'
 
 const Board = () => {
+  const { resetGame } = useContext(SpordleContext);
   const {
     guessTheWord,
     pressEnter,
@@ -19,7 +20,7 @@ const Board = () => {
       <h1 className='font-extrabold text-5xl m-4'>SPORDLE</h1>
       <Grid />
       <Keyboard />
-      <small className='m-5'>Refresh page to play again with new word!</small>
+       <button onClick={resetGame}>Reset Game</button>
     </div>
   )
 }
