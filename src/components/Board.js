@@ -1,18 +1,19 @@
-import React, {useContext} from 'react'
-import Grid from './Grid/Grid'
-import Keyboard from './Keyboard/Keyboard'
-import { SpordleContext } from '../App'
+// Board.js
+import React, { useContext } from 'react';
+import Grid from './Grid/Grid';
+import Keyboard from './Keyboard/Keyboard';
+import { SpordleContext } from '../App';
 
 const Board = () => {
-  const { resetGame } = useContext(SpordleContext);
   const {
+    resetGame,
     guessTheWord,
     pressEnter,
     completedRows,
     currentRow,
     word,
     guessWord,
-    backspace
+    backspace,
   } = useContext(SpordleContext);
 
   return (
@@ -20,9 +21,9 @@ const Board = () => {
       <h1 className='font-extrabold text-5xl m-4'>SPORDLE</h1>
       <Grid />
       <Keyboard />
-       <button onClick={resetGame}>Reset Game</button>
+      <button onClick={resetGame}>Reset Game</button>
     </div>
-  )
-}
+  );
+};
 
-export default Board
+export default Board;

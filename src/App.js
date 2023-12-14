@@ -19,6 +19,7 @@ function App() {
     setCompletedRows([]);
     setGuessWord([]);
     setCurrentRow(0);
+    window.location.reload();
   };
 
   function guessTheWord(char){
@@ -54,9 +55,9 @@ function App() {
         word ,
         guessWord ,
         backspace,
-        resetGame
+        resetGame,
       }} >
-      <Board/>
+      <Board />
       </SpordleContext.Provider>
       );
     }
